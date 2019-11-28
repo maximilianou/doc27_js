@@ -1,0 +1,32 @@
+<template>
+    <div class="ToDoItem">
+      <p class="ToDoItem-Text">{{item.text}}</p>
+      <div class="ToDoItem-Delete" @click="deleteItem(item)">-</div>
+    </div>
+</template>
+<script>
+export default {
+    name: "to-do-item",
+    props: ["item"],
+    methods: {
+        deleteItem(item){
+            this.$emit("delete", item);
+        }
+    }
+};
+</script>
+<style >
+.ToDoItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ToDoItem-Text {
+    width: 90%;
+    background-color: white;
+    border: 1px solid lightgrey;
+    box-shadow: 1px 1px 1px lightgrey;
+    padding: 12px;
+    margin-right: 10px;
+}
+</style>
