@@ -1,11 +1,9 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import ToDo from './components/ToDo';
 
 function App() {
-  return (
-    <ToDo />
-  );
+  return (<ToDo />);
 }
 
 export default App;
