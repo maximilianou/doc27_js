@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Logo from '../assets/logo.svg';
 import ToDoItem from './ToDoItem';
 import './ToDo.css';
-import { listenerCount } from 'cluster';
+//import { listenerCount } from 'cluster';
 
 const ToDo = () => {
 
@@ -37,7 +37,7 @@ const ToDo = () => {
     const handleInput = (e) => {
       setToDo( e.target.value );
     };
-    const deleteItem = () => {
+    const deleteItem = (id) => {
       setList( list.filter( (item) => item.id !== id ) );
     };
     return (
@@ -47,7 +47,7 @@ const ToDo = () => {
           <div className='ToDo-Container'>
             <div className='ToDo-Content'>
               { list.map( (item) => {
-                <ToDoItem key={item.id} item={item} deleteItem={deleteItem} />;
+                return <ToDoItem key={item.id} item={item} deleteItem={deleteItem} />;
               })}
             </div>
             <div className='ToDo-Input'>
