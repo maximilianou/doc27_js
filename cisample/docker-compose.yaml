@@ -1,7 +1,7 @@
 version: '2.1'
 services:
     base:
-        image: alpine-node-cmi
+        image: node:alpine
         volumes:
             - .:/usr/src/app/
             - ./docker_node_modules:/usr/src/app/node_modules
